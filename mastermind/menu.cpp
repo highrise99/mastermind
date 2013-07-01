@@ -5,6 +5,12 @@
 
 #include "menu.h"
 
+menu::menu(const char CONSTRUCTOR_MINIMUM, const char CONSTRUCTOR_MAXIMUM) {
+    MINIMUM = CONSTRUCTOR_MINIMUM;
+    MAXIMUM = CONSTRUCTOR_MAXIMUM;
+    A_ERRORS = ERRORS();
+}
+
 /* menu::menu
  * ----------
  * Arguments:

@@ -10,17 +10,15 @@
 #include "code.h"
 
 int main() {
-    const struct ERRORS MAIN_MENU_ERRORS = { // the error codes for the main menu
-        "     >> error : invalid input\n\n >> ",
-        "     >> error : invalid input\n\n >> "
-    };
-    menu main_menu(1, 3, MAIN_MENU_ERRORS); // an object of "menu" for the main menu
+    menu main_menu(1, 3); // an object of "menu" for the main menu
     
 #define VERSION "Mastermind Beta 1.0.1\n\n"
     std::cout << VERSION;
 #undef VERSION
 
     do {
+        menu difficulty(1, 3);
+        char turns;
         code code_one;
 
         std::cout << "Main Menu:\n    1.    New Game\n    2.    Exit\n    3.    About\n\ninput: ";
@@ -28,7 +26,9 @@ int main() {
 
         switch(main_menu.return_input()) { // As "main_menu.input" is private, "main_menu.return_input()" returns its value as an integer.
         case 1:
-            std::cout << "\n\n";
+            std::cout << "\n\nDifficulty:\n    1.    8 Turns\n    2.    10 Turns\n    3.    12 Turns\n\ninput: ";
+            difficulty.acquire();
+            turns = 6 + 2 * difficulty.return_input(); // getting the respective number of turns from 1, 2, or 3
 
             // If this is defined, the codemaker's code is displayed:
 #ifdef MAKE_CODE_DEBUG
@@ -37,7 +37,7 @@ int main() {
 
             std::cout << "Guess my code: ";
 
-            for(char turns = 10; turns > 0; turns--) { // TODO: add difficulty w/ 8, 10, and 12 turn games
+            for(turns; turns > 0; turns--) { // TODO: add difficulty w/ 8, 10, and 12 turn games
                 code_one.input();
                 code_one.provide_feedback();
                 if(code_one.win() == true) /* As "code_one.feedback[0]" (the number of black pegs, 4 of which determine a win) is private,
