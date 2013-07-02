@@ -12,7 +12,7 @@
 int main() {
     menu main_menu(1, 3); // an object of "menu" for the main menu
     
-#define VERSION "Mastermind Beta 1.0.1\n\n"
+#define VERSION "Mastermind Beta 1.1_01\n\n"
     std::cout << VERSION;
 #undef VERSION
 
