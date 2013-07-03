@@ -5,12 +5,6 @@
 
 #include "menu.h"
 
-menu::menu(const char CONSTRUCTOR_MINIMUM, const char CONSTRUCTOR_MAXIMUM) {
-    MINIMUM = CONSTRUCTOR_MINIMUM;
-    MAXIMUM = CONSTRUCTOR_MAXIMUM;
-    A_ERRORS = ERRORS();
-}
-
 /* menu::menu
  * ----------
  * Arguments:
@@ -20,11 +14,6 @@ menu::menu(const char CONSTRUCTOR_MINIMUM, const char CONSTRUCTOR_MAXIMUM) {
  * returns: N/A (Constructors cannot have a return type.)
  * initializes "MINIMUM," "MAXIMUM," and "A_ERRORS"
  */
-menu::menu(const char CONSTRUCTOR_MINIMUM, const char CONSTRUCTOR_MAXIMUM, const struct ERRORS CONSTRUCTOR_ERRORS) {
-    MINIMUM = CONSTRUCTOR_MINIMUM;
-    MAXIMUM = CONSTRUCTOR_MAXIMUM;
-    A_ERRORS = CONSTRUCTOR_ERRORS;
-}
 
 /* menu::acquire
  * Arguments: N/A
@@ -41,19 +30,19 @@ void menu::acquire() {
     do {
         std::string buffer; // raw input from the console
 
+        std::cout << A_MESSAGES.PROMPT;
         std::getline(std::cin, buffer);
-
         input = atoi(buffer.c_str()); // We convert the raw input to an integer
 
         // We check for errors. The respective error codes are displayed, if applicable.
         if(input < MINIMUM) {
             input_bad = true;
-            std::cout << A_ERRORS.LESS;
+            std::cout << A_MESSAGES.LESS;
             continue;
         }
         else if(input > MAXIMUM) {
             input_bad = true;
-            std::cout << A_ERRORS.GREAT;
+            std::cout << A_MESSAGES.GREAT;
             continue;
         }
         else

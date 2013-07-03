@@ -89,13 +89,13 @@ void code::input() {
          * beginning.
          */
         if(string_buffer.length() < 4) {
-            std::cout << "     >> error : invalid input\n\n >> ";
             code_bad = true;
+            std::cout << "     >> error : invalid input\n\n >> ";
             continue;
         }
         else if(string_buffer.length() > 4) {
-            std::cout << "     >> error : invalid input\n\n >> ";
             code_bad = true;
+            std::cout << "     >> error : invalid input\n\n >> ";
             continue;
         }
         else

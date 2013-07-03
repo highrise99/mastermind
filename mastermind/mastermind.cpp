@@ -12,7 +12,7 @@
 int main() {
     menu main_menu(1, 3); // an object of "menu" for the main menu
     
-#define VERSION "Mastermind Beta 1.1_01\n\n"
+#define VERSION "Mastermind Alpha 1.0.1.0\n\n"
     std::cout << VERSION;
 #undef VERSION
 
@@ -21,12 +21,12 @@ int main() {
         char turns;
         code code_one;
 
-        std::cout << "Main Menu:\n    1.    New Game\n    2.    Exit\n    3.    About\n\ninput: ";
+        std::cout << "Main Menu:\n    1.    New Game\n    2.    Exit\n    3.    About\n\n";
         main_menu.acquire(); // acquires input for the main menu
 
         switch(main_menu.return_input()) { // As "main_menu.input" is private, "main_menu.return_input()" returns its value as an integer.
         case 1:
-            std::cout << "\n\nDifficulty:\n    1.    8 Turns\n    2.    10 Turns\n    3.    12 Turns\n\ninput: ";
+            std::cout << "\n\nDifficulty:\n    1.    8 Turns\n    2.    10 Turns\n    3.    12 Turns\n\n";
             difficulty.acquire();
             turns = 6 + 2 * difficulty.return_input(); // getting the respective number of turns from 1, 2, or 3
 
