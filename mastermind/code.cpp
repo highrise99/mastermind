@@ -90,12 +90,12 @@ void code::input() {
          */
         if(string_buffer.length() < 4) {
             code_bad = true;
-            std::cout << "     >> error : invalid input\n\n >> ";
+            std::cout << "\nerror: input too short\n\n";
             continue;
         }
         else if(string_buffer.length() > 4) {
             code_bad = true;
-            std::cout << "     >> error : invalid input\n\n >> ";
+            std::cout << "\nerror: input too long\n\n";
             continue;
         }
         else
@@ -127,7 +127,7 @@ void code::input() {
                 guess[element] = 5;
                 break;
             default:
-                std::cout << "     >> error : invalid input\n\n >> ";
+                std::cout << "\nerror: bad input\n\n";
                 code_bad = true;
                 continue;
             }
