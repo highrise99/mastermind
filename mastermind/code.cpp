@@ -5,16 +5,22 @@
 
 #include "code.h"
 
-/* code::code (constructor of the class "code")
- * --------------------------------------------
+/* code::code
+ * ----------
  * Arguments: N/A
  * returns: N/A (Constructors cannot have a return type.)
+ * Initializes:
+ *     - distribution w/ (0, 5)
+ *     - seed w/ seed_generator()
+ *     - urng w/ std::default_random_engine(seed)
+ *     - each peg of the codemaker's code with a psuedo-randomly generated, randomly seeded value
  */
-code::code() : distribution_one(0, 5) { /* "distribution_one" is a constant and therefore must be initialized with the constructor. See "code.h" for more
-                                         * information.
-                                         */
+code::code() : distribution(0, 5) {
+    seed = seed_generator();
+    urng = std::default_random_engine(seed);
+
     for(char element = 0; element < 4; element++)
-        maker_code[element] = distribution_one(generator_one); // assigns a random value between 0 and 5 to each element of "maker_code"
+        maker_code[element] = distribution(urng);
 }
 
 /* code::make_code_debug
@@ -144,7 +150,7 @@ void code::input() {
  */
 void code::provide_feedback() {
     for(char element = 0; element < 2; element++) // The number of black and white pegs is reset after each guess.
-        feedback[element] = 0;
+        assessment[element] = 0;
 
     char maker_pegs[6]; /* This is an alternate method of storing the codemaker's code, with each element not representing a color, but the total amount
                          * thereof.
@@ -162,7 +168,7 @@ void code::provide_feedback() {
         if(maker_code[element] == guess[element]) { /* If the values (colors) within a particular element (location) are the same between "maker_code" and
                                                      * "guess," then the number of black pegs is incremented by one.
                                                      */
-            ++(feedback[0]);
+            ++(assessment[0]);
         }
         else {
             ++(maker_pegs[maker_code[element]]); /* The number representing a color in a code (e.g. 0 for red)
@@ -176,7 +182,7 @@ void code::provide_feedback() {
     for(char element = 0; element < 6; element++) /* for each element of "maker_pegs" and "guess_pegs" (w/ each representing the number of a color of pegs in
                                                    * "maker_code" and "guess" respectively:
                                                    */
-        feedback[1] += (maker_pegs[element] < guess_pegs[element] ? maker_pegs[element] : guess_pegs[element]); /* We increase the number of white pegs by
+        assessment[1] += (maker_pegs[element] < guess_pegs[element] ? maker_pegs[element] : guess_pegs[element]); /* We increase the number of white pegs by
                                                                                                                  * the lesser value of "maker_pegs" and
                                                                                                                  * "guess_pegs." (w/ the value referring
                                                                                                                  * to the number of a color of pegs)
@@ -184,7 +190,7 @@ void code::provide_feedback() {
 }
 
 bool code::win() {
-    if(feedback[0] == 4)
+    if(assessment[0] == 4)
         return(true);
     else
         return(false);
@@ -204,7 +210,7 @@ std::string code::ftostr() {
          */
         char buffer[2]; // ASCII characters are stored here to initialize "pegs."
 
-        sprintf_s(buffer, "%d", feedback[element]);
+        sprintf_s(buffer, "%d", assessment[element]);
         std::string pegs(buffer);
         output += pegs + " ";
 
@@ -220,7 +226,7 @@ std::string code::ftostr() {
         output += " ";
 
         // Following propper English grammar, pegs, the plural of peg, is appended to the return value following only 0 and plural numbers.
-        if(feedback[element] == 1)
+        if(assessment[element] == 1)
             output += "peg";
         else
             output += "pegs";
