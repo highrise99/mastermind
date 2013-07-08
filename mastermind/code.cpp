@@ -51,7 +51,7 @@ void code::output_maker_code() {
             break;
         case 3:
             SetConsoleTextAttribute(output_h, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-            std::cout << "turquoise";
+            std::cout << "cyan";
             break;
         case 4:
             SetConsoleTextAttribute(output_h, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
@@ -133,7 +133,7 @@ void code::input() {
             case 'g':
                 guess[element] = 2;
                 break;
-            case 't':
+            case 'c':
                 guess[element] = 3;
                 break;
             case 'b':
