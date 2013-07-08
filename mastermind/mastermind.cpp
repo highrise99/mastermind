@@ -18,7 +18,7 @@ int main() {
     main_menu_list_item_data.push_back(about);
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data); // an instance of the "menu" class for the main menu
     
-#define VERSION "Mastermind v0.6.0\n"
+#define VERSION "Mastermind v0.8.2\n"
     std::cout << VERSION;
 #undef VERSION
 
@@ -41,7 +41,9 @@ int main() {
 
             // If this is defined, the codemaker's code is output:
 #ifdef MAKE_CODE_DEBUG
-            std::cout << "My code is \"" << code_one.make_code_debug() << ".\"\n\n";
+            std::cout << "\nMy code is \"";
+            a_code.output_maker_code();
+            std::cout << ".\"\n";
 #endif // MAKE_CODE_DEBUG
 
             std::cout << "\nGuess my code: ";
@@ -64,10 +66,13 @@ int main() {
             // We check for a win or loss and output accordingly.
             if(a_code.win() == true)
                 std::cout << "\nYou win!\n";
-            else
-                std::cout << "\nYou lose. My code is \"" << a_code.make_code_debug() << ".\"\n"; /* We display the codemaker's code if the
+            else {
+                std::cout << "\nYou lose. My code is \"";
+                a_code.output_maker_code();
+                std::cout << ".\"\n"; /* We display the codemaker's code if the
                                                                                                         * codebreaker loses.
                                                                                                         */
+            }
 
             break;
         case 2:
