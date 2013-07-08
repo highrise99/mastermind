@@ -18,7 +18,7 @@ int main() {
     main_menu_list_item_data.push_back(about);
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data); // an instance of the "menu" class for the main menu
     
-#define VERSION "Mastermind v0.8.3\n"
+#define VERSION "Mastermind v0.9.0-alpha\n"
     std::cout << VERSION;
 #undef VERSION
 

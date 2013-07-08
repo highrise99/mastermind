@@ -30,35 +30,79 @@ code::code() : distribution(0, 5) {
  * outputs a colored, comma-seperated ordered list of the pegs of the codemaker's code
  */
 void code::output_maker_code() {
-    HANDLE output_h = GetStdHandle(STD_OUTPUT_HANDLE); // 
+#ifdef WINDOWS
+    HANDLE output_h = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_SCREEN_BUFFER_INFO csbi;
 
     GetConsoleScreenBufferInfo(output_h, &csbi);
+#endif // WINDOWS
 
     for(char element = 0; element < 4; element++) { // for each peg of the codemaker's code...
         switch(maker_code[element]) { // sets the output text color and outputs the respective color
         case 0:
+#ifdef ANSI
+            std::cout << "\033[0;31m";
+#endif // ANSI
+
+#ifdef WINDOWS
             SetConsoleTextAttribute(output_h, FOREGROUND_RED | FOREGROUND_INTENSITY);
+#endif // WINDOWS
+
             std::cout << "red";
             break;
         case 1:
+#ifdef ANSI
+            std::cout << "\033[0;33m";
+#endif // ANSI
+
+#ifdef WINDOWS
             SetConsoleTextAttribute(output_h, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
+#endif // WINDOWS
+
             std::cout << "yellow";
             break;
         case 2:
+#ifdef ANSI
+            std::cout << "\033[0;32m";
+#endif // ANSI
+
+#ifdef WINDOWS
             SetConsoleTextAttribute(output_h, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+#endif // WINDOWS
+
             std::cout << "green";
             break;
         case 3:
+#ifdef ANSI
+            std::cout << "\033[0;36m";
+#endif // ANSI
+
+#ifdef WINDOWS
             SetConsoleTextAttribute(output_h, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+#endif // WINDOWS
+
             std::cout << "cyan";
             break;
         case 4:
+#ifdef ANSI
+            std::cout << "\033[0;34m";
+#endif // ANSI
+
+#ifdef WINDOWS
             SetConsoleTextAttribute(output_h, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+#endif // WINDOWS
+
             std::cout << "blue";
             break;
         case 5:
+#ifdef ANSI
+            std::cout << "\033[0;35m";
+#endif // ANSI
+
+#ifdef WINDOWS
             SetConsoleTextAttribute(output_h, FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
+#endif // WINDOWS
+
             std::cout << "violet";
             break;
         }
@@ -66,7 +110,13 @@ void code::output_maker_code() {
         if(element != 3) // if the element doesn't point to the last peg, output a comma
             std::cout << ", ";
 
+#ifdef ANSI
+        std::cout << "\033[0m";
+#endif // ANSI
+
+#ifdef WINDOWS
         SetConsoleTextAttribute(output_h, csbi.wAttributes);
+#endif // WINDOWS
     }
 }
 

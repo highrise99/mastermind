@@ -3,6 +3,9 @@
  * This is the C++ header file for the class "menu."
  */
 
+#ifndef MENU_H
+
+#define MENU_H
 #include <string>
 #include <vector>
 #include <iostream>
@@ -25,3 +28,5 @@ public:
     void acquire();
     int return_input();
 };
+
+#endif // MENU_H

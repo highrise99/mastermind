@@ -4,7 +4,13 @@
  */
 
 #include <random>
+//#define ANSI
+#define WINDOWS
+
+#ifdef WINDOWS
 #include <Windows.h>
+#endif // WINDOWS
+
 #include <string>
 #include <conio.h>
 #include <iostream>
