@@ -22,9 +22,9 @@ private:
                          * Each element equals a value b/n 0 & 5, which cooresponds to a color & a letter:
                          * Value        Color       Letter
                          * 0            red         r
-                         * 1            orange      o
-                         * 2            yellow      y
-                         * 3            green       g
+                         * 1            yellow      y
+                         * 2            green       g
+                         * 3            cyan        c
                          * 4            blue        b
                          * 5            violet      v
                          */
@@ -38,12 +38,9 @@ private:
 public:
     code();
     void output_maker_code();
-    void input(); // old
-    void get();
-    void provide_feedback(); // old
+    void input();
     void compare();
-    bool win(); // old
-    bool return_comparison_black();
+    bool won();
     std::string ftostr(); // old
     void output_comparison();
 };

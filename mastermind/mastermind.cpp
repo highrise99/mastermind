@@ -18,7 +18,7 @@ int main() {
     main_menu_list_item_data.push_back(about);
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data); // an instance of the "menu" class for the main menu
     
-#define VERSION "Mastermind v0.9.0-alpha\n"
+#define VERSION "Mastermind v0.1.0-alpha\n"
     std::cout << VERSION;
 #undef VERSION
 
@@ -39,7 +39,7 @@ int main() {
             difficulty.acquire(); // getting input for the difficulty menu...
             turns = difficulty.return_input(); // The return values are 8, 10, and 12. (turns)
 
-            // If this is defined, the codemaker's code is output:
+            // If this is defined, then the codemaker's code is output:
 #ifdef MAKE_CODE_DEBUG
             std::cout << "\nMy code is \"";
             a_code.output_maker_code();
@@ -50,28 +50,25 @@ int main() {
 
             for(turns; turns > 0; turns--) {
                 a_code.input();
-                a_code.provide_feedback();
-                if(a_code.win() == true) /* As "code_one.feedback[0]" (the number of black pegs, 4 of which determine a win) is private,
-                                            * "code_one.win()" returns its value as a character.
-                                            */
-                    break; // We break out of the loop if the codebreaker wins.
+                a_code.compare();
+                if(a_code.won() == true) /* As "a_code.comparison[0]" (the number of black pegs, 4 of which indicate a win) is private,
+                                          * "a_code.won()" returns "true" if "a_code.comparison[0]" equals 4. (the codebreaker wins)
+                                          */
+                    break;
                 else {
-                    if(turns != 1) /* If a wrong guess is made on the last turn, it is not necessary to display the feedback. (though it is
-                                    * necessary to call "code_one.provide_feedback()" to determine a loss)
+                    if(turns != 1) /* If an incorrect guess is entered on the last turn, it is not necessary to display the result of the
+                                    * comparison. (However, it is necessary to call "code_one.compare()" to determine a loss.)
                                     */
                         std::cout << a_code.ftostr();
                 }
             }
 
-            // We check for a win or loss and output accordingly.
-            if(a_code.win() == true)
-                std::cout << "\nYou win!\n";
+            if(a_code.won() == true)
+                std::cout << "\nYou won!\n";
             else {
-                std::cout << "\nYou lose. My code is \"";
+                std::cout << "\nYou lost. My code was \"";
                 a_code.output_maker_code();
-                std::cout << ".\"\n"; /* We display the codemaker's code if the
-                                                                                                        * codebreaker loses.
-                                                                                                        */
+                std::cout << ".\"\n"; // If the codebreaker loses, then the codemaker's code is output.
             }
 
             break;
@@ -82,7 +79,7 @@ int main() {
             break;
         }
     }
-    while(main_menu.return_input() != 2); // The loop (and program) continue unless the main menu's input is "2," in which case the program exits.
+    while(main_menu.return_input() != 2); // loops while the main menu input is not 2 (which determines the exit)
 
     return(0);
 }

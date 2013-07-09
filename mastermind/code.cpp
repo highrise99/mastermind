@@ -151,8 +151,8 @@ void code::input() {
         }
         while(character_buffer != '\r');*/
 
-        /* We check if the input is too short or long before checking for invalid characters. If it is not the right length, the loop continues from the
-         * beginning.
+        /* We check if the input is too short or long before checking for invalid characters. If it is not the right length, the loop continues
+         * from the beginning.
          */
         if(string_buffer.length() < 4) {
             code_bad = true;
@@ -167,8 +167,8 @@ void code::input() {
         else
             code_bad = false;
 
-        for(char element = 0; element < 4; element++) { /* We convert each letter of input to a value and assign it to the codebreaker's code unless
-                                                         * there are invalid characters.
+        for(char element = 0; element < 4; element++) { /* We convert each letter of input to a value and assign it to the codebreaker's code
+                                                         * unless there are invalid characters.
                                                          */
             if(code_bad == true)
                 break;
@@ -202,54 +202,58 @@ void code::input() {
     while(code_bad == true); // The loop continues untill it is the right length and does not contain any invalid characters.
 }
 
-/* code::provide_feedback
- * ----------------------
+/* code::compare
+ * -------------
  * Arguments: N/A
  * returns: void
- * assigns the number of black and white pegs to "feedback"
+ * Initializes:
+ *     - "comparison" w/ the number of black & white pegs
+ *     - "maker_pegs" w/ 0 for each element
+ *     - "guess_pegs" [. . .]
  */
-void code::provide_feedback() {
-    for(char element = 0; element < 2; element++) // The number of black and white pegs is reset after each guess.
-        comparison[element] = 0;
+void code::compare() {
+    for(char element = 0; element < 2; element++)
+        comparison[element] = 0; // The number of black & white pegs is reset after each guess
 
-    char maker_pegs[6]; /* This is an alternate method of storing the codemaker's code, with each element not representing a color, but the total amount
-                         * thereof.
-                         */
+    char maker_pegs[6]; // the number of each color of peg in the codemaker's code
 
-    for(char element = 0; element < 6; element++) // "maker_pegs" must be initialized.
+    for(char element = 0; element < 6; element++)
         maker_pegs[element] = 0;
 
-    char guess_pegs[6];                           // "[. . .]" "guess_pegs" "[. . .]"
+    char guess_pegs[6]; // [. . .] the codebreaker's code
 
-    for(char element = 0; element < 6; element++) // "                              "
+    for(char element = 0; element < 6; element++)
         guess_pegs[element] = 0;
 
-    for(char element = 0; element < 4; element++) {
-        if(maker_code[element] == guess[element]) { /* If the values (colors) within a particular element (location) are the same between "maker_code" and
-                                                     * "guess," then the number of black pegs is incremented by one.
+    for(char element = 0; element < 4; element++) { // for each position in the codemaker's code
+        if(maker_code[element] == guess[element]) { /* A black peg represents a peg of the correct color (value) in the correct position.
+                                                     * ("element" = "element")
                                                      */
             ++(comparison[0]);
         }
         else {
-            ++(maker_pegs[maker_code[element]]); /* The number representing a color in a code (e.g. 0 for red)
-                                                * equals the element of "maker_pegs" representing the same color. (e.g. "maker_pegs[0]. . ."
-                                                * . . . equals the total amount of red pegs in the codemaker's code. (e.g. 2 red pegs: "maker_pegs[0] = 2;")
-                                                */
-            ++(guess_pegs[guess[element]]); // "[. . . .]" "guess_pegs" "[. . . .]"
+            ++(maker_pegs[maker_code[element]]); /* incrementing the number of the current color of pegs (An element of "maker_pegs" equals the
+                                                  * value of its color of pegs.)
+                                                  */
+            ++(guess_pegs[guess[element]]); // [. . .] of "guess_pegs" equals [. . . .]
         }
     }
     
-    for(char element = 0; element < 6; element++) /* for each element of "maker_pegs" and "guess_pegs" (w/ each representing the number of a color of pegs in
-                                                   * "maker_code" and "guess" respectively:
-                                                   */
-        comparison[1] += (maker_pegs[element] < guess_pegs[element] ? maker_pegs[element] : guess_pegs[element]); /* We increase the number of white pegs by
-                                                                                                                 * the lesser value of "maker_pegs" and
-                                                                                                                 * "guess_pegs." (w/ the value referring
-                                                                                                                 * to the number of a color of pegs)
-                                                                                                                 */
+    for(char element = 0; element < 6; element++) // for the number of pegs of each color
+        comparison[1] += (maker_pegs[element] < guess_pegs[element] ? maker_pegs[element] : guess_pegs[element]); /* incrementing the number of
+                                                                                                                   * white pegs by the lesser
+                                                                                                                   * value (A peg can only occupy
+                                                                                                                   * 1 position.) b/n the number
+                                                                                                                   * of pegs of the color (A white
+                                                                                                                   * peg represents a peg of a
+                                                                                                                   * correct color in an incorrect
+                                                                                                                   * position.) in the codemaker's
+                                                                                                                   * code & the number of pegs in
+                                                                                                                   * the codebreaker's code
+                                                                                                                   */
 }
 
-bool code::win() {
+bool code::won() {
     if(comparison[0] == 4)
         return(true);
     else
