@@ -139,6 +139,7 @@ void code::input() {
 
         std::string string_buffer; // raw input from the console
 
+        std::cout << "\ninput: ";
         std::getline(std::cin, string_buffer);
         
         /*do {          
@@ -300,7 +301,7 @@ std::string code::ftostr() {
             output += ", ";
             break;
         case 1:
-            output += "\n\n";
+            output += "\n";
             break;
         }
     }

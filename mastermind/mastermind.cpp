@@ -18,7 +18,7 @@ int main() {
     main_menu_list_item_data.push_back(about);
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data); // an instance of the "menu" class for the main menu
     
-#define VERSION "Mastermind v0.10.1-alpha\n"
+#define VERSION "Mastermind v0.10.6-alpha\n"
     std::cout << VERSION;
 #undef VERSION
 
@@ -41,12 +41,12 @@ int main() {
 
             // If this is defined, then the codemaker's code is output:
 #ifdef MAKE_CODE_DEBUG
-            std::cout << "\nMy code is \"";
+            std::cout << "My code is \"";
             a_code.output_maker_code();
             std::cout << ".\"\n";
 #endif // MAKE_CODE_DEBUG
 
-            std::cout << "\nGuess my code: ";
+            std::cout << "\nNew Game:\n";
 
             for(turns; turns > 0; turns--) {
                 a_code.input();
