@@ -9,26 +9,25 @@
  * ----------
  * Arguments:
  *     - std::string title: the title of the menu
- *     - std::string constructor_input_prompt: a prompt for input after the menu (e.g. "input: ")
- *     - std::string constructor_bad_input: the error output if the input is invalid
- *     - std::vector<command_struct> constructor_list: a list of commands
+ *     - std::string constructor_input_prompt: the prompt for input
+ *     - std::string constructor_bad_input: the error output if the input is bad
+ *     - std::vector<command_struct> constructor_list: a list of the commands
  * returns: N/A (Constructors cannot have a return type.)
  * Initializes:
- *     - list: w/ constructor_list
- *     - inpur_prompt: w/ constructor_command_prompt
- *     - bad_input: w/ constructor_bad_input
+ *     - "list" w/ "constructor_list"
+ *     - "input_prompt" w/ "constructor_command_prompt"
+ *     - "bad_input" w/ "constructor_bad_input"
  */
 menu::menu(std::string title, std::string constructor_input_prompt, std::string constructor_bad_input,
            std::vector<command_struct> constructor_list) {
     prompt += "\n" + title + "\n\n"; // The prompt will include a newline, the title, two more newlines...
     list = constructor_list;
 
-    for(std::vector<command_struct>::size_type command_number = 0; command_number < list.size(); command_number++) /* for each command in the
-                                                                                                                    * list...
-                                                                                                                    */
+    for(std::vector<command_struct>::size_type command_number = 0; command_number < list.size(); command_number++)
         prompt += "    " + list[command_number].identifier + ". " + list[command_number].command_string + "\n"; /* ...two newlines,
-                                                                                                * (looped for each command) a 4-space indent,
-                                                                                                * a handle string, a period, a space (end loop)...
+                                                                                                * (looped for each command in the list) a 4-space
+                                                                                                * indent, a handle string, a period,
+                                                                                                * a space (end loop)...
                                                                                                 */
 
     prompt += "\n"; // ...a space (end loop), and another newline.
@@ -37,11 +36,13 @@ menu::menu(std::string title, std::string constructor_input_prompt, std::string 
 }
 
 /* menu::acquire
+ * -------------
  * Arguments: N/A
- * returns: the return value of the identified command
+ * returns: void
+ * initializes the return integer with that of the identified command
  */
 void menu::acquire() {
-    std::vector<command_struct>::size_type command_number; // the number of the command being accessed in the list
+    std::vector<command_struct>::size_type command_number; // the number of the command in the list
     bool input_bad = true; // Is the input bad?
 
     std::cout << prompt; // prompting...
@@ -51,8 +52,8 @@ void menu::acquire() {
 
         std::cout << input_prompt; // ...prompting for input
         std::getline(std::cin, buffer);
-        for(command_number = 0; command_number < list.size(); command_number++) { // for each command in the list...
-            if(buffer == list[command_number].identifier) { /* If the input equals the identifier of a command, the loop breaks at the respective
+        for(command_number = 0; command_number < list.size(); command_number++) { // for each command in the list
+            if(buffer == list[command_number].identifier) { /* If the input equals the identifier of a command, then the loop breaks at that
                                                              * command number.
                                                              */
                 input_bad = false;
@@ -60,15 +61,20 @@ void menu::acquire() {
             }
         }
 
-        if(input_bad == true) /* If "input_bad" is not false after the loop, then the input did not equal the identifier of any command and is
-                               * therefore bad. The respective error code is output.
+        if(input_bad == true) /* If "input_bad" is not false after the loop, then the input did not equal the identifier of a command and is bad.
+                               * The error for bad input is output.
                                */
             std::cout << bad_input;
     }
 
-    input = list[command_number].return_integer; // The return value of the identified command is returned.
+    class_return_int = list[command_number].struct_return_int;
 }
 
-int menu::return_input() {
-    return(input);
+/* menu::function_return_int
+ * -------------------------
+ * Arguments: N/A
+ * returns: the return integer of the identified command
+ */
+int menu::function_return_int() {
+    return(class_return_int);
 }

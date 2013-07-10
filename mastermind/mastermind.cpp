@@ -18,7 +18,7 @@ int main() {
     main_menu_list_item_data.push_back(about);
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data); // an instance of the "menu" class for the main menu
     
-#define VERSION "Mastermind v0.10.6-alpha\n"
+#define VERSION "Mastermind v0.10.7-alpha-api\n"
     std::cout << VERSION;
 #undef VERSION
 
@@ -34,10 +34,10 @@ int main() {
 
         main_menu.acquire(); // getting input for the main menu
 
-        switch(main_menu.return_input()) { // As "main_menu.input" is private, "main_menu.return_input()" returns its value as an integer.
+        switch(main_menu.function_return_int()) { // As "main_menu.input" is private, "main_menu.return_input()" returns its value as an integer.
         case 1:
             difficulty.acquire(); // getting input for the difficulty menu...
-            turns = difficulty.return_input(); // The return values are 8, 10, and 12. (turns)
+            turns = difficulty.function_return_int(); // The return values are 8, 10, and 12. (turns)
 
             // If this is defined, then the codemaker's code is output:
 #ifdef MAKE_CODE_DEBUG
@@ -79,7 +79,7 @@ int main() {
             break;
         }
     }
-    while(main_menu.return_input() != 2); // loops while the main menu input is not 2 (which determines the exit)
+    while(main_menu.function_return_int() != 2); // loops while the main menu input is not 2 (which determines the exit)
 
     return(0);
 }
