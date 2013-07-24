@@ -1,6 +1,5 @@
-/* menu.cpp
- * --------
- * This is the C++ header file for the class "menu."
+/*! \file menu.cpp
+ *  the source of code
  */
 
 #include "menu.h"

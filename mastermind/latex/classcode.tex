@@ -1,0 +1,120 @@
+\hypertarget{classcode}{\section{code Class Reference}
+\label{classcode}\index{code@{code}}
+}
+
+
+{\ttfamily \#include $<$code.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcode_a4e71026d8a0bc0d948cce66ebbeb3b67}{code} ()
+\item 
+void \hyperlink{classcode_a82e60a4ea6fc2d1aa2edb3fbcbb7d39e}{output\-\_\-maker\-\_\-code} ()
+\begin{DoxyCompactList}\small\item\em outputs the codemaker's code, in color and with commas \end{DoxyCompactList}\item 
+void \hyperlink{classcode_a7c09c4c8205ad589cc6ea49afc45df24}{input} ()
+\item 
+void \hyperlink{classcode_a28c10163c30d1301531a3388587a5c90}{compare} ()
+\item 
+bool \hyperlink{classcode_a5d9db095e4024e760f54837e90f53d09}{won} ()
+\item 
+std\-::string \hyperlink{classcode_a11e1f1759a86360ebab83177e8e44d87}{ftostr} ()
+\item 
+void \hyperlink{classcode_ac8bd60f045bc4f87fc4a8ff9bcb64ea3}{output\-\_\-comparison} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the codemaker's and codebreaker's codes 
+
+Definition at line 39 of file code.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcode_a4e71026d8a0bc0d948cce66ebbeb3b67}{\index{code@{code}!code@{code}}
+\index{code@{code}!code@{code}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}code\-::code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_a4e71026d8a0bc0d948cce66ebbeb3b67}
+code initializes seed with seed\-\_\-generator. urng is initialized with std\-::default\-\_\-random\-\_\-engine(seed). The elements of maker\-\_\-code are initialized with distribution(urng). 
+
+Definition at line 17 of file code.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcode_a28c10163c30d1301531a3388587a5c90}{\index{code@{code}!compare@{compare}}
+\index{compare@{compare}!code@{code}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}void code\-::compare (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_a28c10163c30d1301531a3388587a5c90}
+
+
+Definition at line 215 of file code.\-cpp.
+
+\hypertarget{classcode_a11e1f1759a86360ebab83177e8e44d87}{\index{code@{code}!ftostr@{ftostr}}
+\index{ftostr@{ftostr}!code@{code}}
+\subsubsection[{ftostr}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string code\-::ftostr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_a11e1f1759a86360ebab83177e8e44d87}
+
+
+Definition at line 269 of file code.\-cpp.
+
+\hypertarget{classcode_a7c09c4c8205ad589cc6ea49afc45df24}{\index{code@{code}!input@{input}}
+\index{input@{input}!code@{code}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}void code\-::input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_a7c09c4c8205ad589cc6ea49afc45df24}
+acquires 
+
+Definition at line 129 of file code.\-cpp.
+
+\hypertarget{classcode_ac8bd60f045bc4f87fc4a8ff9bcb64ea3}{\index{code@{code}!output\-\_\-comparison@{output\-\_\-comparison}}
+\index{output\-\_\-comparison@{output\-\_\-comparison}!code@{code}}
+\subsubsection[{output\-\_\-comparison}]{\setlength{\rightskip}{0pt plus 5cm}void code\-::output\-\_\-comparison (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_ac8bd60f045bc4f87fc4a8ff9bcb64ea3}
+\hypertarget{classcode_a82e60a4ea6fc2d1aa2edb3fbcbb7d39e}{\index{code@{code}!output\-\_\-maker\-\_\-code@{output\-\_\-maker\-\_\-code}}
+\index{output\-\_\-maker\-\_\-code@{output\-\_\-maker\-\_\-code}!code@{code}}
+\subsubsection[{output\-\_\-maker\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}void code\-::output\-\_\-maker\-\_\-code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_a82e60a4ea6fc2d1aa2edb3fbcbb7d39e}
+
+
+outputs the codemaker's code, in color and with commas 
+
+For the elements of maker\-\_\-code, maker\-\_\-code\mbox{[}element\mbox{]} switches to output the name of a color, in color. If the element is not equal to 3, a comma is output. Else, T\-O\-D\-O\-: 
+
+Definition at line 31 of file code.\-cpp.
+
+\hypertarget{classcode_a5d9db095e4024e760f54837e90f53d09}{\index{code@{code}!won@{won}}
+\index{won@{won}!code@{code}}
+\subsubsection[{won}]{\setlength{\rightskip}{0pt plus 5cm}bool code\-::won (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcode_a5d9db095e4024e760f54837e90f53d09}
+
+
+Definition at line 257 of file code.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{code_8h}{code.\-h}\item 
+\hyperlink{code_8cpp}{code.\-cpp}\end{DoxyCompactItemize}

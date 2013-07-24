@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu.html#af0a1b0de4c2734a97730feeff19d64ca"><param name="Name" value="acquire"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html"><param name="Name" value="code"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="code_8h.html"><param name="Name" value="code.h"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html"><param name="Name" value="code"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a4e71026d8a0bc0d948cce66ebbeb3b67"><param name="Name" value="code"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a28c10163c30d1301531a3388587a5c90"><param name="Name" value="compare"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a11e1f1759a86360ebab83177e8e44d87"><param name="Name" value="ftostr"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a7c09c4c8205ad589cc6ea49afc45df24"><param name="Name" value="input"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#ac8bd60f045bc4f87fc4a8ff9bcb64ea3"><param name="Name" value="output_comparison"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a82e60a4ea6fc2d1aa2edb3fbcbb7d39e"><param name="Name" value="output_maker_code"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a5d9db095e4024e760f54837e90f53d09"><param name="Name" value="won"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html#a9a985d9b578345128866e33fb2ab3224"><param name="Name" value="command_string"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html"><param name="Name" value="command_struct"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html#a9a985d9b578345128866e33fb2ab3224"><param name="Name" value="command_string"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html#ac3896bbb8dd9fa4b4b42cdadbede40c6"><param name="Name" value="identifier"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html#a4ffa2587b5988c5ed69bde2ef37475c0"><param name="Name" value="struct_return_int"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a28c10163c30d1301531a3388587a5c90"><param name="Name" value="compare"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a11e1f1759a86360ebab83177e8e44d87"><param name="Name" value="ftostr"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu.html#aaae57843111eaeb7bc9163024164a071"><param name="Name" value="function_return_int"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html#ac3896bbb8dd9fa4b4b42cdadbede40c6"><param name="Name" value="identifier"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a7c09c4c8205ad589cc6ea49afc45df24"><param name="Name" value="input"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mastermind_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"><param name="Name" value="main"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mastermind_8cpp.html"><param name="Name" value="mastermind.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mastermind_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4"><param name="Name" value="main"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mastermind_8cpp.html#a1c6d5de492ac61ad29aec7aa9a436bbf"><param name="Name" value="VERSION"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu.html"><param name="Name" value="menu"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu.html#af0a1b0de4c2734a97730feeff19d64ca"><param name="Name" value="acquire"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu.html#aaae57843111eaeb7bc9163024164a071"><param name="Name" value="function_return_int"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="classmenu.html#a1c34578d03f094dc86898b8a0b799e8a"><param name="Name" value="menu"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#ac8bd60f045bc4f87fc4a8ff9bcb64ea3"><param name="Name" value="output_comparison"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a82e60a4ea6fc2d1aa2edb3fbcbb7d39e"><param name="Name" value="output_maker_code"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structcommand__struct.html#a4ffa2587b5988c5ed69bde2ef37475c0"><param name="Name" value="struct_return_int"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mastermind_8cpp.html#a1c6d5de492ac61ad29aec7aa9a436bbf"><param name="Name" value="VERSION"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="code_8h.html#a987b73d7cc6da72732af75c5d7872d29"><param name="Name" value="WINDOWS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="classcode.html#a5d9db095e4024e760f54837e90f53d09"><param name="Name" value="won"></OBJECT>
+</UL>
+</BODY>
+</HTML>

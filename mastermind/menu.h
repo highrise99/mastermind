@@ -1,6 +1,5 @@
-/* menu.h
- * ------
- * This is the C++ header file for the class "menu."
+/*! \file menu.h
+ *  the header of menu
  */
 
 #ifndef MENU_H // #include guard

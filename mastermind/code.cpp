@@ -1,6 +1,5 @@
-/* code.cpp
- * --------
- * This is the C++ source file for the class "code."
+/*! \file code.cpp
+ *  the source file of code
  */
 
 #include "code.h"
@@ -109,14 +108,15 @@ void code::output_maker_code() {
 
         if(element != 3) // if the element doesn't point to the last peg, output a comma
             std::cout << ", ";
-
+		else {
 #ifdef ANSI
-        std::cout << "\033[0m";
+            std::cout << "\033[0m";
 #endif // ANSI
 
 #ifdef WINDOWS
-        SetConsoleTextAttribute(output_h, csbi.wAttributes);
+            SetConsoleTextAttribute(output_h, csbi.wAttributes);
 #endif // WINDOWS
+		}
     }
 }
 
