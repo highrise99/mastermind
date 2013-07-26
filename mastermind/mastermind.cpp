@@ -30,7 +30,7 @@ int main() {
     main_menu_list_item_data.push_back(about);
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data);
     
-#define VERSION "TerminalMind v0.11.0-alpha\n"
+#define VERSION "TerminalMind v0.11.0-ansi-API\n"
     std::cout << VERSION;
 #undef VERSION
 
