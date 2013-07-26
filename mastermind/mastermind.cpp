@@ -17,10 +17,10 @@
 
 /*! main constructs main_menu.
  *
- *  While the function_return_int of main_menu is not equal to 2, difficulty and a_code are constructed, the main_menu.acquire is called, and the function_return_int of main_menu calls a switch.
- *  If the new game command is identified, then the acquire of difficulty is called and turns is initialized with difficulty.function_return_int.
+ *  While the function_return_int of main_menu is not equal to 2, difficulty and a_code are constructed, main_menu.acquire is called, and the function_return_int of main_menu calls a switch.
+ *  If the new game command is identified, the acquire of difficulty is called and turns is initialized with difficulty.function_return_int.
  *  For turns, the input of a_code and a_code.compare, and the win of a_code are called.
- *  If a_code.win is not true, then the ftostr of a_code is output if turns is not equal to 1.
+ *  If a_code.win is not true, the ftostr of a_code is output if turns is not equal to 1.
  */
 int main() {
     command_struct new_game = { "1", "New Game", 1 } , exit = { "2", "Exit", 2 } , about = { "3", "About", 3 } ;
@@ -28,9 +28,12 @@ int main() {
     main_menu_list_item_data.push_back(new_game);
     main_menu_list_item_data.push_back(exit);
     main_menu_list_item_data.push_back(about);
+
+	/*! the main menu
+	 */
     menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data);
     
-#define VERSION "TerminalMind v0.11.0-ansi-API\n"
+#define VERSION "TerminalMind v0.12.0-ansi-API\n"
     std::cout << VERSION;
 #undef VERSION
 
@@ -40,8 +43,14 @@ int main() {
         difficulty_list_item_data.push_back(eight_turns);
         difficulty_list_item_data.push_back(ten_turns);
         difficulty_list_item_data.push_back(twelve_turns);
+
+		/*! the difficulty menu
+		 */
         menu difficulty("Difficulty:", "input: ", "error: bad input", difficulty_list_item_data);
         char turns;
+
+		/*! the codemaker's and codebreaker's codes
+		 */
         code a_code;
 
         main_menu.acquire();

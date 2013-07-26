@@ -106,17 +106,29 @@ void code::output_maker_code() {
             break;
         }
 
-        if(element != 3) // if the element doesn't point to the last peg, output a comma
-            std::cout << ", ";
-		else {
+//        if(element != 3) // if the element doesn't point to the last peg, output a comma
+//            std::cout << ", ";
+//		else {
+//#ifdef ANSI
+//            std::cout << "\033[0m";
+//#endif // ANSI
+//
+//#ifdef WINDOWS
+//            SetConsoleTextAttribute(output_h, csbi.wAttributes);
+//#endif // WINDOWS
+//		}
+
+		if(element == 3) {
 #ifdef ANSI
-            std::cout << "\033[0m";
-#endif // ANSI
+			std::cout << "\033[0m";
+#endif
 
 #ifdef WINDOWS
-            SetConsoleTextAttribute(output_h, csbi.wAttributes);
-#endif // WINDOWS
+			SetConsoleTextAttribute(output_h, csbi.wAttributes);
+#endif
 		}
+		else
+			std::cout << ", ";
     }
 }
 

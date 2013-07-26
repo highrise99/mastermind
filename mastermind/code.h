@@ -66,8 +66,8 @@ public:
 	/*! \brief outputs the codemaker's code, in color and with commas
 	 *
 	 *  For the elements of maker_code, maker_code[element] switches to output the name of a color, in color.
-	 *  If the element is not equal to 3, a comma is output.
-	 *  Else, TODO:
+	 *  If the element is equal to three, TODO:
+	 *  Else, a comma and a space are output.
 	 */
     void output_maker_code();
 
