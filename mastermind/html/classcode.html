@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">TerminalMind
-   &#160;<span id="projectnumber">v0.10.8-alpha-api</span>
+   &#160;<span id="projectnumber">v0.13.0-ANSI-API</span>
    </div>
    <div id="projectbrief">a terminal version of the 1970 board game...</div>
   </td>
@@ -100,6 +100,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a82e60a4ea6fc2d1aa2edb3fbcbb7d39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">outputs the codemaker's code, in color and with commas  <a href="#a82e60a4ea6fc2d1aa2edb3fbcbb7d39e">More...</a><br/></td></tr>
 <tr class="separator:a82e60a4ea6fc2d1aa2edb3fbcbb7d39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c09c4c8205ad589cc6ea49afc45df24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcode.html#a7c09c4c8205ad589cc6ea49afc45df24">input</a> ()</td></tr>
+<tr class="memdesc:a7c09c4c8205ad589cc6ea49afc45df24"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes guess with good input  <a href="#a7c09c4c8205ad589cc6ea49afc45df24">More...</a><br/></td></tr>
 <tr class="separator:a7c09c4c8205ad589cc6ea49afc45df24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28c10163c30d1301531a3388587a5c90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcode.html#a28c10163c30d1301531a3388587a5c90">compare</a> ()</td></tr>
 <tr class="separator:a28c10163c30d1301531a3388587a5c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,7 +181,26 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>acquires </p>
+
+<p>initializes guess with good input </p>
+<p>While code_bad is true, or the input is bad, <a class="el" href="classcode.html#a7c09c4c8205ad589cc6ea49afc45df24" title="initializes guess with good input ">code::input</a> defines and initializes string_buffer with input. If the length of string_buffer is less than 4, an error is output and the loop continues. Else, if the length of string_buffer is greater than 4, an error is output and the loop continues. Else, code_bad is TODO: false. For the 4 elements of string_buffer, if the code is bad, the loop breaks. The element of string_buffer switches, and:</p>
+<table class="doxtable">
+<tr>
+<th>If it equals: </th><th>the element of guess TODO::  </th></tr>
+<tr>
+<td>r </td><td>0 </td></tr>
+<tr>
+<td>y </td><td>1 </td></tr>
+<tr>
+<td>g </td><td>2 </td></tr>
+<tr>
+<td>c </td><td>3 </td></tr>
+<tr>
+<td>b </td><td>4 </td></tr>
+<tr>
+<td>v </td><td>5 </td></tr>
+</table>
+<p>By default, code bad is TODO: true </p>
 
 <p>Definition at line <a class="el" href="code_8cpp_source.html#l00129">129</a> of file <a class="el" href="code_8cpp_source.html">code.cpp</a>.</p>
 
@@ -215,7 +235,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>outputs the codemaker's code, in color and with commas </p>
-<p>For the elements of maker_code, maker_code[element] switches to output the name of a color, in color. If the element is not equal to 3, a comma is output. Else, TODO: </p>
+<p>For the elements of maker_code, maker_code[element] switches to output the name of a color, in color. If the element is equal to three, TODO: Else, a comma and a space are output. </p>
 
 <p>Definition at line <a class="el" href="code_8cpp_source.html#l00031">31</a> of file <a class="el" href="code_8cpp_source.html">code.cpp</a>.</p>
 
@@ -245,7 +265,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 24 2013 16:57:53 for TerminalMind by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 28 2013 17:40:57 for TerminalMind by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

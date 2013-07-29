@@ -17,19 +17,8 @@
  *     - "input_prompt" w/ "constructor_command_prompt"
  *     - "bad_input" w/ "constructor_bad_input"
  */
-menu::menu(std::string title, std::string constructor_input_prompt, std::string constructor_bad_input,
-           std::vector<command_struct> constructor_list) {
-    prompt += "\n" + title + "\n\n"; // The prompt will include a newline, the title, two more newlines...
-    list = constructor_list;
-
-    for(std::vector<command_struct>::size_type command_number = 0; command_number < list.size(); command_number++)
-        prompt += "    " + list[command_number].identifier + ". " + list[command_number].command_string + "\n"; /* ...two newlines,
-                                                                                                * (looped for each command in the list) a 4-space
-                                                                                                * indent, a handle string, a period,
-                                                                                                * a space (end loop)...
-                                                                                                */
-
-    prompt += "\n"; // ...a space (end loop), and another newline.
+menu::menu(std::string constructor_title, std::string constructor_input_prompt, std::string constructor_bad_input) {
+	title = constructor_title;
     input_prompt = constructor_input_prompt;
     bad_input = constructor_bad_input;
 }
@@ -44,7 +33,14 @@ void menu::acquire() {
     std::vector<command_struct>::size_type command_number; // the number of the command in the list
     bool input_bad = true; // Is the input bad?
 
-    std::cout << prompt; // prompting...
+    std::cout << "\n" << title << "\n\n"; // The prompt will include a newline, the title, two more newlines...
+
+	for(std::vector<command_struct>::size_type command_number = 0; command_number < list.size(); command_number++)
+        std::cout << "    " << list[command_number].identifier << ". " << list[command_number].command_string << "\n"; /* ...two newlines,
+                                                                                                * (looped for each command in the list) a 4-space
+                                                                                                * indent, a handle string, a period,
+                                                                                                * a space (end loop)...
+                                                                                                */
 
     while(input_bad == true) {
         std::string buffer; // input

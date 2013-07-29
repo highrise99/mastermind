@@ -66,14 +66,35 @@ public:
 	/*! \brief outputs the codemaker's code, in color and with commas
 	 *
 	 *  For the elements of maker_code, maker_code[element] switches to output the name of a color, in color.
-	 *  If the element is equal to three, TODO:
+     *  If the element is equal to three, TODO:
 	 *  Else, a comma and a space are output.
 	 */
     void output_maker_code();
 
-	/*! acquires
+	/*! \brief initializes guess with good input
+	 *
+	 *  While code_bad is true, or the input is bad, code::input defines and initializes string_buffer with input.
+	 *  If the length of string_buffer is less than 4, an error is output and the loop continues.
+	 *  Else, if the length of string_buffer is greater than 4, an error is output and the loop continues.
+     *  Else, code_bad is TODO: false.
+	 *  For the 4 elements of string_buffer, if the code is bad, the loop breaks.
+	 *  The element of string_buffer switches, and:
+	 *
+	 *  If it equals: | the element of guess TODO::
+	 *  ------------- | ----------------------------
+	 *  r             | 0
+	 *  y             | 1
+	 *  g             | 2
+	 *  c             | 3
+	 *  b             | 4
+	 *  v             | 5
+	 *
+     *  By default, code bad is TODO: true
 	 */
     void input();
+
+	/*!
+	 */
     void compare();
     bool won();
     std::string ftostr();

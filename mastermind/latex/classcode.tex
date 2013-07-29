@@ -13,7 +13,7 @@
 void \hyperlink{classcode_a82e60a4ea6fc2d1aa2edb3fbcbb7d39e}{output\-\_\-maker\-\_\-code} ()
 \begin{DoxyCompactList}\small\item\em outputs the codemaker's code, in color and with commas \end{DoxyCompactList}\item 
 void \hyperlink{classcode_a7c09c4c8205ad589cc6ea49afc45df24}{input} ()
-\item 
+\begin{DoxyCompactList}\small\item\em initializes guess with good input \end{DoxyCompactList}\item 
 void \hyperlink{classcode_a28c10163c30d1301531a3388587a5c90}{compare} ()
 \item 
 bool \hyperlink{classcode_a5d9db095e4024e760f54837e90f53d09}{won} ()
@@ -75,7 +75,23 @@ Definition at line 269 of file code.\-cpp.
 {}
 \end{DoxyParamCaption}
 )}}\label{classcode_a7c09c4c8205ad589cc6ea49afc45df24}
-acquires 
+
+
+initializes guess with good input 
+
+While code\-\_\-bad is true, or the input is bad, \hyperlink{classcode_a7c09c4c8205ad589cc6ea49afc45df24}{code\-::input} defines and initializes string\-\_\-buffer with input. If the length of string\-\_\-buffer is less than 4, an error is output and the loop continues. Else, if the length of string\-\_\-buffer is greater than 4, an error is output and the loop continues. Else, code\-\_\-bad is T\-O\-D\-O\-: false. For the 4 elements of string\-\_\-buffer, if the code is bad, the loop breaks. The element of string\-\_\-buffer switches, and\-:
+
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}{\bf If it equals\-: }&{\bf the element of guess T\-O\-D\-O\-:\-:  }\\\cline{1-2}
+r &0 \\\cline{1-2}
+y &1 \\\cline{1-2}
+g &2 \\\cline{1-2}
+c &3 \\\cline{1-2}
+b &4 \\\cline{1-2}
+v &5 \\\cline{1-2}
+\end{TabularC}
+By default, code bad is T\-O\-D\-O\-: true 
 
 Definition at line 129 of file code.\-cpp.
 
@@ -97,7 +113,7 @@ Definition at line 129 of file code.\-cpp.
 
 outputs the codemaker's code, in color and with commas 
 
-For the elements of maker\-\_\-code, maker\-\_\-code\mbox{[}element\mbox{]} switches to output the name of a color, in color. If the element is not equal to 3, a comma is output. Else, T\-O\-D\-O\-: 
+For the elements of maker\-\_\-code, maker\-\_\-code\mbox{[}element\mbox{]} switches to output the name of a color, in color. If the element is equal to three, T\-O\-D\-O\-: Else, a comma and a space are output. 
 
 Definition at line 31 of file code.\-cpp.
 

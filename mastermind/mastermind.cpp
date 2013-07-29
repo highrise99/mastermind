@@ -10,73 +10,80 @@
  *  the name, the version, and a newline
  */
 
+/*! \class MainMenu
+ *  \brief the main menu
+ */
+
+/*! \class Difficulty
+ *  \brief the difficulty menu
+ */
+
+/*! \class a_Code
+ *  \brief the codemaker's and codebreaker's codes
+ */
+
+/*! \var turns
+ *  \brief the number of turns
+ */
+
 #include <vector>
 #include <iostream>
 #include "menu.h"
 #include "code.h"
 
-/*! main constructs main_menu.
+/*! \brief the main function
  *
- *  While the function_return_int of main_menu is not equal to 2, difficulty and a_code are constructed, main_menu.acquire is called, and the function_return_int of main_menu calls a switch.
- *  If the new game command is identified, the acquire of difficulty is called and turns is initialized with difficulty.function_return_int.
- *  For turns, the input of a_code and a_code.compare, and the win of a_code are called.
- *  If a_code.win is not true, the ftostr of a_code is output if turns is not equal to 1.
+ *  main constructs MainMenu.
+ *
+ *  While the menu::function_return_int of MainMenu is not equal to 2, or an exit has been identified, Difficulty and a_Code are constructed, the menu::acquire of MainMenu is called, and the menu::function_return_int of MainMenu switches.
+ *  If it is equal to 1, or a new game has been identified, the menu::acquire of Difficulty is called and \ref turns "turns" is initialized with the menu::function_return_int of Difficulty.
+ *  For turns, the code::input, code::compare, and code::won of a_Code are called.
+ *  If the code::won of a_Code does not return true, or the codebreaker has not won, the code::ftostr of a_Code is output if \ref turns "turns" is not equal to 1, or it is the last turn.
  */
 int main() {
-    command_struct new_game = { "1", "New Game", 1 } , exit = { "2", "Exit", 2 } , about = { "3", "About", 3 } ;
-    std::vector<command_struct> main_menu_list_item_data;
-    main_menu_list_item_data.push_back(new_game);
-    main_menu_list_item_data.push_back(exit);
-    main_menu_list_item_data.push_back(about);
-
-	/*! the main menu
-	 */
-    menu main_menu("Main Menu:", "input: ", "error: bad input", main_menu_list_item_data);
+    menu MainMenu("Main Menu:", "\ninput: ", "\nerror: bad input\n");
+	command_struct new_game = { "1", "New Game", 1 } , exit = { "2", "Exit", 2 } , about = { "3", "About", 3 } ;
+	MainMenu.list.push_back(new_game);
+	MainMenu.list.push_back(exit);
+	MainMenu.list.push_back(about);
     
-#define VERSION "TerminalMind v0.12.0-ansi-API\n"
+#define VERSION "TerminalMind v0.13.3-ANSI-API\n"
     std::cout << VERSION;
 #undef VERSION
 
     do {
-        command_struct eight_turns = { "1", "8 Turns", 8 } , ten_turns = { "2", "10 Turns", 10 } , twelve_turns = { "3", "12 Turns", 12 } ;
-        std::vector<command_struct> difficulty_list_item_data;
-        difficulty_list_item_data.push_back(eight_turns);
-        difficulty_list_item_data.push_back(ten_turns);
-        difficulty_list_item_data.push_back(twelve_turns);
-
-		/*! the difficulty menu
-		 */
-        menu difficulty("Difficulty:", "input: ", "error: bad input", difficulty_list_item_data);
+        menu Difficulty("Difficulty:", "\ninput: ", "\nerror: bad input\n");
+		command_struct eight_turns = { "1", "8 Turns", 8 } , ten_turns = { "2", "10 Turns", 10 } , twelve_turns = { "3", "12 Turns", 12 } ;
+		Difficulty.list.push_back(eight_turns);
+		Difficulty.list.push_back(ten_turns);
+		Difficulty.list.push_back(twelve_turns);
         char turns;
+        code a_Code;
 
-		/*! the codemaker's and codebreaker's codes
-		 */
-        code a_code;
+        MainMenu.acquire();
 
-        main_menu.acquire();
-
-        switch(main_menu.function_return_int()) {
+        switch(MainMenu.function_return_int()) {
         case 1:
-            difficulty.acquire();
-            turns = difficulty.function_return_int();
+            Difficulty.acquire();
+            turns = Difficulty.function_return_int();
             std::cout << "\nNew Game:\n";
 
             for(turns; turns > 0; turns--) {
-                a_code.input();
-                a_code.compare();
-                if(a_code.won() == true)
+                a_Code.input();
+                a_Code.compare();
+                if(a_Code.won() == true)
                     break;
                 else {
                     if(turns != 1)
-                        std::cout << a_code.ftostr();
+                        std::cout << a_Code.ftostr();
                 }
             }
 
-            if(a_code.won() == true)
+            if(a_Code.won() == true)
                 std::cout << "\nYou won!\n";
             else {
                 std::cout << "\nYou lost. My code was \"";
-                a_code.output_maker_code();
+                a_Code.output_maker_code();
                 std::cout << ".\"\n";
             }
 
@@ -84,11 +91,11 @@ int main() {
         case 2:
             break;
         case 3:
-            std::cout << "\nAbout\n\n    TODO: insert text here\n";
+            std::cout << "\nAbout\n\n    TODO:\n";
             break;
         }
     }
-    while(main_menu.function_return_int() != 2);
+    while(MainMenu.function_return_int() != 2);
 
     return(0);
 }

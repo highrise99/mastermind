@@ -17,13 +17,13 @@ struct command_struct { // a command
 
 class menu { // a menu
 private:
-    std::string prompt; // a prompt
-    std::vector<command_struct> list; // a list of the commands
+	std::string title;
     std::string input_prompt; // the prompt for input
     std::string bad_input; // the error output if the input is bad
     int class_return_int; // the return integer of the identified command
 public:
-    menu(std::string, std::string, std::string, std::vector<command_struct>);
+    menu(std::string, std::string, std::string);
+	std::vector<command_struct> list; // a list of the commands
     void acquire();
     int function_return_int();
 };

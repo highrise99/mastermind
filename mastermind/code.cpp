@@ -106,18 +106,6 @@ void code::output_maker_code() {
             break;
         }
 
-//        if(element != 3) // if the element doesn't point to the last peg, output a comma
-//            std::cout << ", ";
-//		else {
-//#ifdef ANSI
-//            std::cout << "\033[0m";
-//#endif // ANSI
-//
-//#ifdef WINDOWS
-//            SetConsoleTextAttribute(output_h, csbi.wAttributes);
-//#endif // WINDOWS
-//		}
-
 		if(element == 3) {
 #ifdef ANSI
 			std::cout << "\033[0m";
@@ -169,12 +157,12 @@ void code::input() {
          */
         if(string_buffer.length() < 4) {
             code_bad = true;
-            std::cout << "\nerror: input too short\n\n";
+            std::cout << "\nerror: input too short\n";
             continue;
         }
         else if(string_buffer.length() > 4) {
             code_bad = true;
-            std::cout << "\nerror: input too long\n\n";
+            std::cout << "\nerror: input too long\n";
             continue;
         }
         else
@@ -206,7 +194,7 @@ void code::input() {
                 guess[element] = 5;
                 break;
             default:
-                std::cout << "\nerror: bad input\n\n";
+                std::cout << "\nerror: bad input\n";
                 code_bad = true;
                 continue;
             }

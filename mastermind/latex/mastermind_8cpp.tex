@@ -13,13 +13,13 @@ the main source
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{mastermind_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}{V\-E\-R\-S\-I\-O\-N}~\char`\"{}Terminal\-Mind v0.\-10.\-8-\/alpha-\/api\textbackslash{}n\char`\"{}
+\#define \hyperlink{mastermind_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}{V\-E\-R\-S\-I\-O\-N}~\char`\"{}Terminal\-Mind v0.\-13.\-0-\/A\-N\-S\-I-\/A\-P\-I\textbackslash{}n\char`\"{}
 \begin{DoxyCompactList}\small\item\em using Semantic Versioning 2.\-0.\-0 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{mastermind_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the main function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -32,7 +32,7 @@ Definition in file \hyperlink{mastermind_8cpp_source}{mastermind.\-cpp}.
 \subsection{Macro Definition Documentation}
 \hypertarget{mastermind_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}{\index{mastermind.\-cpp@{mastermind.\-cpp}!V\-E\-R\-S\-I\-O\-N@{V\-E\-R\-S\-I\-O\-N}}
 \index{V\-E\-R\-S\-I\-O\-N@{V\-E\-R\-S\-I\-O\-N}!mastermind.cpp@{mastermind.\-cpp}}
-\subsubsection[{V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-E\-R\-S\-I\-O\-N~\char`\"{}Terminal\-Mind v0.\-10.\-8-\/alpha-\/api\textbackslash{}n\char`\"{}}}\label{mastermind_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}
+\subsubsection[{V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-E\-R\-S\-I\-O\-N~\char`\"{}Terminal\-Mind v0.\-13.\-0-\/A\-N\-S\-I-\/A\-P\-I\textbackslash{}n\char`\"{}}}\label{mastermind_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}
 
 
 using Semantic Versioning 2.\-0.\-0 
@@ -47,9 +47,13 @@ the name, the version, and a newline
 {}
 \end{DoxyParamCaption}
 )}}\label{mastermind_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
-main constructs main\-\_\-menu.
 
-While the function\-\_\-return\-\_\-int of main\-\_\-menu is not equal to 2, difficulty and a\-\_\-code are constructed, the main\-\_\-menu.\-acquire is called, and the function\-\_\-return\-\_\-int of main\-\_\-menu calls a switch. If the new game command is identified, then the acquire of difficulty is called and turns is initialized with difficulty.\-function\-\_\-return\-\_\-int. For turns, the input of a\-\_\-code and a\-\_\-code.\-compare, and the win of a\-\_\-code are called. If a\-\_\-code.\-win is not true, then the ftostr of a\-\_\-code is output if turns is not equal to 1. 
 
-Definition at line 25 of file mastermind.\-cpp.
+the main function 
+
+main constructs \hyperlink{class_main_menu}{Main\-Menu}.
+
+While the \hyperlink{classmenu_aaae57843111eaeb7bc9163024164a071}{menu\-::function\-\_\-return\-\_\-int} of \hyperlink{class_main_menu}{Main\-Menu} is not equal to 2, or an exit has been identified, \hyperlink{class_difficulty}{Difficulty} and \hyperlink{classa___code}{a\-\_\-\-Code} are constructed, the \hyperlink{classmenu_af0a1b0de4c2734a97730feeff19d64ca}{menu\-::acquire} of \hyperlink{class_main_menu}{Main\-Menu} is called, and the \hyperlink{classmenu_aaae57843111eaeb7bc9163024164a071}{menu\-::function\-\_\-return\-\_\-int} of \hyperlink{class_main_menu}{Main\-Menu} switches. If it is equal to 1, or a new game has been identified, the \hyperlink{classmenu_af0a1b0de4c2734a97730feeff19d64ca}{menu\-::acquire} of \hyperlink{class_difficulty}{Difficulty} is called and turns is initialized with the \hyperlink{classmenu_aaae57843111eaeb7bc9163024164a071}{menu\-::function\-\_\-return\-\_\-int} of \hyperlink{class_difficulty}{Difficulty}. For turns, the \hyperlink{classcode_a7c09c4c8205ad589cc6ea49afc45df24}{code\-::input}, \hyperlink{classcode_a28c10163c30d1301531a3388587a5c90}{code\-::compare}, and \hyperlink{classcode_a5d9db095e4024e760f54837e90f53d09}{code\-::won} of \hyperlink{classa___code}{a\-\_\-\-Code} are called. If the \hyperlink{classcode_a5d9db095e4024e760f54837e90f53d09}{code\-::won} of \hyperlink{classa___code}{a\-\_\-\-Code} does not return true, or the codebreaker has not won, the \hyperlink{classcode_a11e1f1759a86360ebab83177e8e44d87}{code\-::ftostr} of \hyperlink{classa___code}{a\-\_\-\-Code} is output if turns is not equal to 1, or it is the last turn. 
+
+Definition at line 43 of file mastermind.\-cpp.
 

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">TerminalMind
-   &#160;<span id="projectnumber">v0.10.8-alpha-api</span>
+   &#160;<span id="projectnumber">v0.13.0-ANSI-API</span>
    </div>
    <div id="projectbrief">a terminal version of the 1970 board game...</div>
   </td>
@@ -86,76 +86,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="mastermind_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="menu_8h.html">menu.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="code_8h.html" title="the header of code ">code.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="mastermind_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   25</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="mastermind_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="structcommand__struct.html">command_struct</a> new_game = { <span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;New Game&quot;</span>, 1 } , exit = { <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;Exit&quot;</span>, 2 } , about = { <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;About&quot;</span>, 3 } ;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;command_struct&gt; main_menu_list_item_data;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    main_menu_list_item_data.push_back(new_game);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    main_menu_list_item_data.push_back(exit);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    main_menu_list_item_data.push_back(about);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classmenu.html">menu</a> main_menu(<span class="stringliteral">&quot;Main Menu:&quot;</span>, <span class="stringliteral">&quot;input: &quot;</span>, <span class="stringliteral">&quot;error: bad input&quot;</span>, main_menu_list_item_data);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define VERSION &quot;TerminalMind v0.10.8-alpha-api\n&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span>    std::cout &lt;&lt; <a class="code" href="mastermind_8cpp.html#a1c6d5de492ac61ad29aec7aa9a436bbf" title="using Semantic Versioning 2.0.0 ">VERSION</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#undef VERSION</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structcommand__struct.html">command_struct</a> eight_turns = { <span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;8 Turns&quot;</span>, 8 } , ten_turns = { <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;10 Turns&quot;</span>, 10 } , twelve_turns = { <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;12 Turns&quot;</span>, 12 } ;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::vector&lt;command_struct&gt; difficulty_list_item_data;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        difficulty_list_item_data.push_back(eight_turns);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        difficulty_list_item_data.push_back(ten_turns);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        difficulty_list_item_data.push_back(twelve_turns);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classmenu.html">menu</a> difficulty(<span class="stringliteral">&quot;Difficulty:&quot;</span>, <span class="stringliteral">&quot;input: &quot;</span>, <span class="stringliteral">&quot;error: bad input&quot;</span>, difficulty_list_item_data);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">char</span> turns;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classcode.html">code</a> a_code;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        main_menu.<a class="code" href="classmenu.html#af0a1b0de4c2734a97730feeff19d64ca">acquire</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">switch</span>(main_menu.<a class="code" href="classmenu.html#aaae57843111eaeb7bc9163024164a071">function_return_int</a>()) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            difficulty.<a class="code" href="classmenu.html#af0a1b0de4c2734a97730feeff19d64ca">acquire</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            turns = difficulty.<a class="code" href="classmenu.html#aaae57843111eaeb7bc9163024164a071">function_return_int</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;\nNew Game:\n&quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">for</span>(turns; turns &gt; 0; turns--) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                a_code.<a class="code" href="classcode.html#a7c09c4c8205ad589cc6ea49afc45df24">input</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                a_code.<a class="code" href="classcode.html#a28c10163c30d1301531a3388587a5c90">compare</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">if</span>(a_code.<a class="code" href="classcode.html#a5d9db095e4024e760f54837e90f53d09">won</a>() == <span class="keyword">true</span>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <span class="keywordflow">if</span>(turns != 1)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        std::cout &lt;&lt; a_code.<a class="code" href="classcode.html#a11e1f1759a86360ebab83177e8e44d87">ftostr</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span>(a_code.<a class="code" href="classcode.html#a5d9db095e4024e760f54837e90f53d09">won</a>() == <span class="keyword">true</span>)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;\nYou won!\n&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;\nYou lost. My code was \&quot;&quot;</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                a_code.<a class="code" href="classcode.html#a82e60a4ea6fc2d1aa2edb3fbcbb7d39e" title="outputs the codemaker&#39;s code, in color and with commas ">output_maker_code</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;.\&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;\nAbout\n\n    TODO: insert text here\n&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">while</span>(main_menu.<a class="code" href="classmenu.html#aaae57843111eaeb7bc9163024164a071">function_return_int</a>() != 2);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="menu_8h.html">menu.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="code_8h.html" title="the header of code ">code.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="mastermind_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   43</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="mastermind_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="the main function ">main</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structcommand__struct.html">command_struct</a> new_game = { <span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;New Game&quot;</span>, 1 } , exit = { <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;Exit&quot;</span>, 2 } , about = { <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;About&quot;</span>, 3 } ;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::vector&lt;command_struct&gt; MainMenu_list_item_data; <span class="comment">// TODO: Merge into Menu</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    MainMenu_list_item_data.push_back(new_game);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    MainMenu_list_item_data.push_back(exit);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    MainMenu_list_item_data.push_back(about);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classmenu.html">menu</a> <a class="code" href="class_main_menu.html" title="the main menu ">MainMenu</a>(<span class="stringliteral">&quot;Main Menu:&quot;</span>, <span class="stringliteral">&quot;input: &quot;</span>, <span class="stringliteral">&quot;error: bad input&quot;</span>, MainMenu_list_item_data);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define VERSION &quot;TerminalMind v0.13.0-ANSI-API\n&quot; // UNCOMMITTED</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>    std::cout &lt;&lt; <a class="code" href="mastermind_8cpp.html#a1c6d5de492ac61ad29aec7aa9a436bbf" title="using Semantic Versioning 2.0.0 ">VERSION</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#undef VERSION</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="structcommand__struct.html">command_struct</a> eight_turns = { <span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;8 Turns&quot;</span>, 8 } , ten_turns = { <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;10 Turns&quot;</span>, 10 } , twelve_turns = { <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;12 Turns&quot;</span>, 12 } ;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::vector&lt;command_struct&gt; Difficulty_list_item_data;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        Difficulty_list_item_data.push_back(eight_turns);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        Difficulty_list_item_data.push_back(ten_turns);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        Difficulty_list_item_data.push_back(twelve_turns);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classmenu.html">menu</a> <a class="code" href="class_difficulty.html" title="the difficulty menu ">Difficulty</a>(<span class="stringliteral">&quot;Difficulty:&quot;</span>, <span class="stringliteral">&quot;input: &quot;</span>, <span class="stringliteral">&quot;error: bad input&quot;</span>, Difficulty_list_item_data);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">char</span> turns;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classcode.html">code</a> <a class="code" href="classa___code.html" title="the codemaker&#39;s and codebreaker&#39;s codes ">a_Code</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        MainMenu.<a class="code" href="classmenu.html#af0a1b0de4c2734a97730feeff19d64ca">acquire</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">switch</span>(MainMenu.<a class="code" href="classmenu.html#aaae57843111eaeb7bc9163024164a071">function_return_int</a>()) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            Difficulty.<a class="code" href="classmenu.html#af0a1b0de4c2734a97730feeff19d64ca">acquire</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            turns = Difficulty.<a class="code" href="classmenu.html#aaae57843111eaeb7bc9163024164a071">function_return_int</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;\nNew Game:\n&quot;</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">for</span>(turns; turns &gt; 0; turns--) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                a_Code.<a class="code" href="classcode.html#a7c09c4c8205ad589cc6ea49afc45df24" title="initializes guess with good input ">input</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                a_Code.<a class="code" href="classcode.html#a28c10163c30d1301531a3388587a5c90">compare</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span>(a_Code.<a class="code" href="classcode.html#a5d9db095e4024e760f54837e90f53d09">won</a>() == <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordflow">if</span>(turns != 1)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        std::cout &lt;&lt; a_Code.<a class="code" href="classcode.html#a11e1f1759a86360ebab83177e8e44d87">ftostr</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span>(0);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span>(a_Code.<a class="code" href="classcode.html#a5d9db095e4024e760f54837e90f53d09">won</a>() == <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;\nYou won!\n&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;\nYou lost. My code was \&quot;&quot;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                a_Code.<a class="code" href="classcode.html#a82e60a4ea6fc2d1aa2edb3fbcbb7d39e" title="outputs the codemaker&#39;s code, in color and with commas ">output_maker_code</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;.\&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;\nAbout\n\n    TODO: insert text here\n&quot;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">while</span>(MainMenu.<a class="code" href="classmenu.html#aaae57843111eaeb7bc9163024164a071">function_return_int</a>() != 2);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span>(0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 24 2013 16:57:53 for TerminalMind by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 28 2013 17:40:57 for TerminalMind by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
